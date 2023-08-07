@@ -1,0 +1,40 @@
+{
+  "name": "chumpy",
+  "version": "1.0.0",
+  "description": "rest api for mobile frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "cls && jest --runInBand",
+    "inittemp": "(npx prisma db push --force-reset && npx prisma generate) ",
+    "init": "(npx prisma db push --force-reset && npx prisma generate) && npx ts-node src/factory/index.ts",
+    "dev": "set DEBUG=express:router & nodemon src/main.ts ",
+    "build": "tsc",
+    "buildpm2": "tsc && npx pm2 start src/main.js && npx pm2 monit"
+  },
+  "author": "Albert John Santos",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.4.2",
+    "nodemon": "^3.0.1",
+    "prisma": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.0.0",
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.13",
+    "@types/jsonwebtoken": "^9.0.2",
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-winston": "^4.2.0",
+    "jsonwebtoken": "^9.0.1",
+    "winston": "^3.10.0",
+    "zod": "^3.21.4"
+  }
+}
